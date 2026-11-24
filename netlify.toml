@@ -1,0 +1,10 @@
+[build]
+  publish = "public"
+
+# Keep the multiplayer API on the existing Hatchable backend.
+# Netlify proxies requests server-side so the browser uses same-origin /api URLs.
+[[redirects]]
+  from = "/api/*"
+  to = "https://crowd-control.hatchable.site/api/:splat"
+  status = 200
+  force = true
